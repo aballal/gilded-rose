@@ -16,12 +16,12 @@ describe GildedRose do
   let(:sulfuras) { Item.new(name="Sulfuras, Hand of Ragnaros", sell_in=1, quality=80) }
 
   let(:passes) { Item.new(name="Backstage passes to a TAFKAL80ETC concert", sell_in=0, quality=20) }
-  let(:passes2) { Item.new(name="Backstage passes to a TAFKAL80ETC concert", sell_in=5, quality=20) }
-  let(:passes2_q) { Item.new(name="Backstage passes to a TAFKAL80ETC concert", sell_in=5, quality=48) }
-  let(:passes3) { Item.new(name="Backstage passes to a TAFKAL80ETC concert", sell_in=10, quality=20) }
-  let(:passes3_q) { Item.new(name="Backstage passes to a TAFKAL80ETC concert", sell_in=10, quality=49) }
-  let(:passes4) { Item.new(name="Backstage passes to a TAFKAL80ETC concert", sell_in=15, quality=20) }
-  let(:passes4_q) { Item.new(name="Backstage passes to a TAFKAL80ETC concert", sell_in=15, quality=50) }
+  let(:passes2) { Item.new(name="Backstage passes to a TAFKAL80ETC concert", sell_in=1, quality=20) }
+  let(:passes2_q) { Item.new(name="Backstage passes to a TAFKAL80ETC concert", sell_in=1, quality=48) }
+  let(:passes3) { Item.new(name="Backstage passes to a TAFKAL80ETC concert", sell_in=6, quality=20) }
+  let(:passes3_q) { Item.new(name="Backstage passes to a TAFKAL80ETC concert", sell_in=6, quality=49) }
+  let(:passes4) { Item.new(name="Backstage passes to a TAFKAL80ETC concert", sell_in=11, quality=20) }
+  let(:passes4_q) { Item.new(name="Backstage passes to a TAFKAL80ETC concert", sell_in=11, quality=50) }
 
   let(:items) { [vest, vest_q, brie, brie_q, brie2, brie2_q, elixir, elixir_q, sulfuras,
     passes, passes2, passes2_q, passes3, passes3_q, passes4, passes4_q] }

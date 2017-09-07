@@ -1,16 +1,15 @@
 class GildedRose
+  EXCEPTIONS = ["Aged Brie",
+                "Backstage passes to a TAFKAL80ETC concert",
+                "Sulfuras, Hand of Ragnaros"]
   def initialize(items)
     @items = items
   end
 
   def update_quality()
     @items.each do |item|
-      if item.name != "Aged Brie" and item.name != "Backstage passes to a TAFKAL80ETC concert"
-        if item.quality > 0
-          if item.name != "Sulfuras, Hand of Ragnaros"
-            item.quality = item.quality - 1
-          end
-        end
+      unless EXCEPTIONS.include?(item.name)
+        item.quality = [item.quality - 1, 0].max
       else
         if item.quality < 50
           item.quality = item.quality + 1
