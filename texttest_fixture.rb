@@ -1,7 +1,7 @@
 #!/usr/bin/ruby -w
 
-require File.join(File.dirname(__FILE__), 'lib/gilded_rose')
-require File.join(File.dirname(__FILE__), 'lib/item')
+require File.join(File.dirname(__FILE__), 'lib/legacy/gilded_rose')
+require File.join(File.dirname(__FILE__), 'lib/legacy/item')
 
 puts "OMGHAI!"
 items = [
