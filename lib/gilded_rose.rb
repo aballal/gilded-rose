@@ -8,27 +8,24 @@ class GildedRose
 
   def update_quality()
     @items.each do |item|
-
-      unless EXCEPTIONS.include?(item.name)
-        item.quality = [item.quality - 1, 0].max
-      else
+      if EXCEPTIONS.include?(item.name)
         item.quality = [item.quality + 1, 50].min unless item.name == "Sulfuras, Hand of Ragnaros"
         if item.name == "Backstage passes to a TAFKAL80ETC concert"
           item.quality = [item.quality + 1, 50].min if item.sell_in < 11
           item.quality = [item.quality + 1, 50].min if item.sell_in < 6
         end
+      else
+        item.quality = [item.quality - 1, 0].max
       end
 
       item.sell_in = item.sell_in - 1 if item.name != "Sulfuras, Hand of Ragnaros"
 
       if item.sell_in < 0
-        unless EXCEPTIONS.include?(item.name)
-          if item.quality > 0
-            item.quality = item.quality - 1
-          end
-        else
+        if EXCEPTIONS.include?(item.name)
           item.quality = 0 if item.name == "Backstage passes to a TAFKAL80ETC concert"
           item.quality = [item.quality + 1, 50].min if item.name == "Aged Brie"
+        else
+          item.quality = [item.quality - 1, 0].max
         end
       end
 
