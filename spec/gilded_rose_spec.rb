@@ -13,7 +13,7 @@ describe GildedRose do
   let(:elixir) { Item.new(name="Elixir of the Mongoose", sell_in=0, quality=7) }
   let(:elixir_q) { Item.new(name="Elixir of the Mongoose", sell_in=0, quality=1) }
 
-  let(:sulfuras) { Item.new(name="Sulfuras, Hand of Ragnaros", sell_in=0, quality=80) }
+  let(:sulfuras) { Item.new(name="Sulfuras, Hand of Ragnaros", sell_in=1, quality=80) }
 
   let(:passes) { Item.new(name="Backstage passes to a TAFKAL80ETC concert", sell_in=0, quality=20) }
   let(:passes2) { Item.new(name="Backstage passes to a TAFKAL80ETC concert", sell_in=5, quality=20) }
@@ -31,6 +31,20 @@ describe GildedRose do
   describe '#update_quality' do
     before do
       gilded_rose.update_quality
+    end
+
+    describe 'updates sell_in' do
+      context 'item is not sulfuras' do
+        it 'decreases sell_in by 1' do
+          expect(vest.sell_in).to eq 9
+        end
+      end
+
+      context 'item is sulfuras' do
+        it 'does not decrease sell_in' do
+          expect(sulfuras.sell_in).to eq 1
+        end
+      end
     end
 
     context 'item is Aged Brie' do
