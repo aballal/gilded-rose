@@ -23,10 +23,16 @@ describe GildedRose do
   let(:passes4) { Item.new("Backstage passes to a TAFKAL80ETC concert", 11, 20) }
   let(:passes4_q) { Item.new("Backstage passes to a TAFKAL80ETC concert", 11, 50) }
 
+  let(:conjured) { Item.new("Conjured Mana Cake", 10, 10) }
+  let(:conjured_q) { Item.new("Conjured Mana Cake", 10, 1) }
+  let(:conjured2) { Item.new("Conjured Mana Cake", 0, 10) }
+  let(:conjured2_q) { Item.new("Conjured Mana Cake", 0, 3) }
+
   let(:items) {
     [
       vest, vest_q, brie, brie_q, brie2, brie2_q, elixir, elixir_q, sulfuras,
-      passes, passes2, passes2_q, passes3, passes3_q, passes4, passes4_q
+      passes, passes2, passes2_q, passes3, passes3_q, passes4, passes4_q,
+      conjured, conjured_q, conjured2, conjured2_q
     ]
   }
 
@@ -117,7 +123,29 @@ describe GildedRose do
       end
     end
 
-    context 'item is any of the others i.e. besides brie, passes and sulfuras' do
+    context 'item is Conjured Mana Cake' do
+      context 'sell by date has not passed' do
+        it 'reduces the quality by 2' do
+          expect(conjured.quality).to eq 8
+        end
+
+        it 'does not reduce the quality beyond 0' do
+          expect(conjured_q.quality).to eq 0
+        end
+      end
+
+      context 'sell by date has passed' do
+        it 'reduces the quality by 4' do
+          expect(conjured2.quality).to eq 6
+        end
+
+        it 'does not reduce the quality beyond 0' do
+          expect(conjured2_q.quality).to eq 0
+        end
+      end
+    end
+
+    context 'item is any of the others i.e. besides brie, passes, sulfuras and conjured' do
       context 'sell by date has not passed' do
         it 'reduces the quality by 1' do
           expect(vest.quality).to eq 19

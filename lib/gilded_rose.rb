@@ -14,7 +14,7 @@ class GildedRose
       else
         change = change_for_others(item)
       end
-      item.quality = [[item.quality + change, 0].max, 50].min
+      item.quality = [[item.quality + change, 0].max, 50].min # ensures 0 <= quality <= 50
     end
   end
 
