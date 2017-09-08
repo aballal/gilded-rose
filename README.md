@@ -19,3 +19,14 @@ Akshathas-MacBook-Pro:gilded-rose aksjohn$ flog ./lib/gilded_rose.rb
     16.3: GildedRose#update_quality        ./lib/gilded_rose.rb:7-17
     10.8: GildedRose#change_for_passes     ./lib/gilded_rose.rb:23-27
 ```
+
+Complexity of the code only increased by 0.3 when new functionality was incorporated.
+
+```
+Akshathas-MacBook-Pro:gilded-rose aksjohn$ flog ./lib/gilded_rose.rb
+    39.3: flog total
+     7.9: flog/method average
+
+    16.3: GildedRose#update_quality        ./lib/gilded_rose.rb:8-18
+    10.8: GildedRose#change_for_passes     ./lib/gilded_rose.rb:24-28
+```
