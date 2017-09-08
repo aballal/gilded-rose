@@ -1,5 +1,6 @@
 class GildedRose
-  EXCEPTIONS = { 'Aged Brie' => 1 } # Exceptions have a rate of change other than -1
+  # Exceptions change by a value other than -1
+  EXCEPTIONS = { 'Aged Brie' => 1, 'Conjured Mana Cake' => -2 }
   def initialize(items)
     @items = items
   end
