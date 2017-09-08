@@ -23,8 +23,12 @@ describe GildedRose do
   let(:passes4) { Item.new("Backstage passes to a TAFKAL80ETC concert", 11, 20) }
   let(:passes4_q) { Item.new("Backstage passes to a TAFKAL80ETC concert", 11, 50) }
 
-  let(:items) { [vest, vest_q, brie, brie_q, brie2, brie2_q, elixir, elixir_q, sulfuras,
-    passes, passes2, passes2_q, passes3, passes3_q, passes4, passes4_q] }
+  let(:items) {
+    [
+      vest, vest_q, brie, brie_q, brie2, brie2_q, elixir, elixir_q, sulfuras,
+      passes, passes2, passes2_q, passes3, passes3_q, passes4, passes4_q
+    ]
+  }
 
   subject(:gilded_rose) { described_class.new(items) }
 

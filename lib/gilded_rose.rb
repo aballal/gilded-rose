@@ -4,29 +4,31 @@ class GildedRose
     @items = items
   end
 
-  def update_quality()
+  def update_quality
     @items.each do |item|
       next if item.name == "Sulfuras, Hand of Ragnaros" # No change to sulfuras
-
-      if item.name == "Backstage passes to a TAFKAL80ETC concert"
-        item.quality = [item.quality + change_for_passes(item), 50].min
-        next
-      end
-
       item.sell_in -= 1
 
-      change = EXCEPTIONS.keys.include?(item.name) ? EXCEPTIONS[item.name] : -1
-      change *= 2 if item.sell_in < 0 # After the sell by date the change is twice as much
-      item.quality = [[item.quality + change, 0].max , 50].min # Quantity is a min of 0 and max of 50
+      if item.name == "Backstage passes to a TAFKAL80ETC concert"
+        change = change_for_passes(item)
+      else
+        change = change_for_others(item)
+      end
+      item.quality = [[item.quality + change, 0].max, 50].min
     end
   end
 
   private
 
   def change_for_passes(item)
-    return -item.quality if item.sell_in <= 0
-    return 3 if item.sell_in < 6
-    return 2 if item.sell_in < 11
+    return -item.quality if item.sell_in < 0
+    return 3 if item.sell_in < 5
+    return 2 if item.sell_in < 10
     1
+  end
+
+  def change_for_others(item)
+    change = EXCEPTIONS.keys.include?(item.name) ? EXCEPTIONS[item.name] : -1
+    item.sell_in < 0 ? change * 2 : change # After the sell by date the change is twice as much
   end
 end
