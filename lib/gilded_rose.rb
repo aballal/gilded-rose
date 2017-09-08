@@ -7,10 +7,10 @@ class GildedRose
 
   def update_quality
     @items.each do |item|
-      next if item.name == "Sulfuras, Hand of Ragnaros" # No change to sulfuras
+      next if item.name == 'Sulfuras, Hand of Ragnaros' # No change to sulfuras
       item.sell_in -= 1
 
-      if item.name == "Backstage passes to a TAFKAL80ETC concert"
+      if item.name == 'Backstage passes to a TAFKAL80ETC concert'
         change = change_for_passes(item)
       else
         change = change_for_others(item)
