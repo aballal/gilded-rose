@@ -1,7 +1,14 @@
 Gilded Rose
 ---
-  
+
 The requirements of this project have been described [here](requirements.txt).
+
+Testing
+---
+
+In order to ensure refactoring did not alter existing functionality, I first wrote the [tests](spec/gilded_rose_spec.rb). I ensured that every code path of the legacy code had a corresponding test. While carrying out refactoring in small chunks I checked that the new code didn't break any tests. If it did, the refactoring had gone wrong, so I went back to the previous green state and started again.
+
+In the end I also ran Emily Bache's testtest_fixture.rb copied [here](legacy/testtest_fixture) against both legacy code and new code, then compared the two outputs. You can see the results [here](results_comparison/).
 
 Complexity Reduction
 ---
