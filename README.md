@@ -1,0 +1,21 @@
+Gilded Rose
+---
+
+Complexity Reduction
+---
+
+Complexity of GildedRose class has been reduced from 94.1 to 39 before new functionality has been introduced.
+
+```
+Akshathas-MacBook-Pro:gilded-rose aksjohn$ flog ./legacy/gilded_rose.rb
+    94.1: flog total
+    47.0: flog/method average
+
+    93.1: GildedRose#update_quality        ./legacy/gilded_rose.rb:7-48
+Akshathas-MacBook-Pro:gilded-rose aksjohn$ flog ./lib/gilded_rose.rb
+    39.0: flog total
+     7.8: flog/method average
+
+    16.3: GildedRose#update_quality        ./lib/gilded_rose.rb:7-17
+    10.8: GildedRose#change_for_passes     ./lib/gilded_rose.rb:23-27
+```
