@@ -9,12 +9,14 @@ Metrics/LineLength:
 
   # While test refactoring is good, I suspect it's out of scope for week 1
   Exclude:
-    - 'spec/**/*'
+    - './lib/legacy/*'
+    - 'texttest_fixture.rb'
 
 Metrics/BlockLength:
   # While test refactoring is good, I suspect it's out of scope for week 1
   Exclude:
-    - 'spec/**/*'
+    - './lib/legacy/*'
+    - 'texttest_fixture.rb'
 
 # I've been quite careful about which style cops I've enabled
 # Why? My feeling is that style cops can create lots of linter noise that

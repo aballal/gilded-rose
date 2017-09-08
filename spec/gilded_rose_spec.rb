@@ -2,26 +2,26 @@ require 'gilded_rose'
 require 'item'
 
 describe GildedRose do
-  let(:vest) { Item.new(name="+5 Dexterity Vest", sell_in=10, quality=20) }
-  let(:vest_q) { Item.new(name="+5 Dexterity Vest", sell_in=10, quality=0) }
+  let(:vest) { Item.new("+5 Dexterity Vest", 10, 20) }
+  let(:vest_q) { Item.new("+5 Dexterity Vest", 10, 0) }
 
-  let(:brie) { Item.new(name="Aged Brie", sell_in=2, quality=0) }
-  let(:brie_q) { Item.new(name="Aged Brie", sell_in=2, quality=50) }
-  let(:brie2) { Item.new(name="Aged Brie", sell_in=0, quality=0) }
-  let(:brie2_q) { Item.new(name="Aged Brie", sell_in=0, quality=49) }
+  let(:brie) { Item.new("Aged Brie", 2, 0) }
+  let(:brie_q) { Item.new("Aged Brie", 2, 50) }
+  let(:brie2) { Item.new("Aged Brie", 0, 0) }
+  let(:brie2_q) { Item.new("Aged Brie", 0, 49) }
 
-  let(:elixir) { Item.new(name="Elixir of the Mongoose", sell_in=0, quality=7) }
-  let(:elixir_q) { Item.new(name="Elixir of the Mongoose", sell_in=0, quality=1) }
+  let(:elixir) { Item.new("Elixir of the Mongoose", 0, 7) }
+  let(:elixir_q) { Item.new("Elixir of the Mongoose", 0, 1) }
 
-  let(:sulfuras) { Item.new(name="Sulfuras, Hand of Ragnaros", sell_in=1, quality=80) }
+  let(:sulfuras) { Item.new("Sulfuras, Hand of Ragnaros", 1, 80) }
 
-  let(:passes) { Item.new(name="Backstage passes to a TAFKAL80ETC concert", sell_in=0, quality=20) }
-  let(:passes2) { Item.new(name="Backstage passes to a TAFKAL80ETC concert", sell_in=1, quality=20) }
-  let(:passes2_q) { Item.new(name="Backstage passes to a TAFKAL80ETC concert", sell_in=1, quality=48) }
-  let(:passes3) { Item.new(name="Backstage passes to a TAFKAL80ETC concert", sell_in=6, quality=20) }
-  let(:passes3_q) { Item.new(name="Backstage passes to a TAFKAL80ETC concert", sell_in=6, quality=49) }
-  let(:passes4) { Item.new(name="Backstage passes to a TAFKAL80ETC concert", sell_in=11, quality=20) }
-  let(:passes4_q) { Item.new(name="Backstage passes to a TAFKAL80ETC concert", sell_in=11, quality=50) }
+  let(:passes) { Item.new("Backstage passes to a TAFKAL80ETC concert", 0, 20) }
+  let(:passes2) { Item.new("Backstage passes to a TAFKAL80ETC concert", 1, 20) }
+  let(:passes2_q) { Item.new("Backstage passes to a TAFKAL80ETC concert", 1, 48) }
+  let(:passes3) { Item.new("Backstage passes to a TAFKAL80ETC concert", 6, 20) }
+  let(:passes3_q) { Item.new("Backstage passes to a TAFKAL80ETC concert", 6, 49) }
+  let(:passes4) { Item.new("Backstage passes to a TAFKAL80ETC concert", 11, 20) }
+  let(:passes4_q) { Item.new("Backstage passes to a TAFKAL80ETC concert", 11, 50) }
 
   let(:items) { [vest, vest_q, brie, brie_q, brie2, brie2_q, elixir, elixir_q, sulfuras,
     passes, passes2, passes2_q, passes3, passes3_q, passes4, passes4_q] }
